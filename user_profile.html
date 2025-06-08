@@ -4,115 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrophyHunter27's Profile - Eternal Backlog</title>
-    <!-- Tailwind CSS -->
+     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Our Custom Stylesheet -->
+     <!-- Our Custom Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
-
-    <style>
-        /* Simple style for active/inactive tabs. We add this for quick visual feedback. */
-        .tab-button.active {
-            @apply bg-gray-800 text-white border-purple-500;
-        }
-    </style>
 </head>
+
 <body class="bg-gray-900 text-white font-sans">
 
-    <!-- =========== REUSABLE HEADER =========== -->
+    <!-- =========== REUSABLE HEADER (WITH WORKING LINKS) =========== -->
     <header class="fixed top-0 left-0 w-full z-30 p-4 bg-black/30 backdrop-blur-sm shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            
             <div class="flex items-center space-x-8">
-                <!-- Links to our other pages -->
-                <a href="index.html" class="text-2xl font-bold text-white">Eternal Backlog</a>
+                 <a href="index.html" class="text-2xl font-bold text-white">Eternal Backlog</a>
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Games</a>
+                    <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">My Dashboard</a>
+					<a href="user_profile.html" class="text-gray-300 hover:text-white transition-colors">My Profile</a>
                     <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
                     <a href="#" class="text-gray-300 hover:text-white transition-colors">Sessions</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">News</a>
                 </nav>
             </div>
-
-            <div class="flex items-center space-x-4">
-                <!-- Swapped this for a link to the user's OWN dashboard -->
-                <a href="dashboard.html" class="hidden sm:block text-gray-300 hover:text-white transition-colors">My Dashboard</a>
-                <!-- Link to THIS public profile -->
-                <a href="user_profile.html" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">My Profile</a>
+           <div class="flex items-center space-x-4">
+                 <span class="hidden sm:block text-gray-300">Viewing: TrophyHunter27</span>
                 <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden container mx-auto mt-4">
-            <nav class="flex flex-col space-y-4">
-                <!-- ... Mobile nav links ... -->
-            </nav>
-        </div>
+       <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden container mx-auto mt-4 p-4 bg-gray-800 rounded-lg">
+           <nav class="flex flex-col space-y-4">
+               <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+               <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">My Dashboard</a>
+               <a href="user_profile.html" class="text-gray-300 hover:text-white transition-colors">My Profile</a>
+			    <hr class="border-gray-700">
+               <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
+               <a href="#" class="text-gray-300 hover:text-white transition-colors">Sessions</a>
+          </nav>
+       </div>
     </header>
 
-    <main>
-        <!-- =========== PROFILE HEADER =========== -->
-        <section class="relative pt-24 h-80 md:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop');">
+     <main>
+        <!-- =========== PROFILE HEADER WITH COVER IMAGE =========== -->
+        <!-- Added pt-16 to push content below fixed header -->
+         <section class="relative pt-16 h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop');">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
-            <!-- Container for content positioning -->
-            <div class="container mx-auto h-full relative px-4">
-                <div class="absolute bottom-0 right-4 flex items-end space-x-4">
-                    <div class="text-right mb-2">
-                        <h1 class="text-3xl md:text-5xl font-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TrophyHunter27</h1>
-                        <p class="text-gray-300">Member since May 2024</p>
-                        <button class="mt-2 bg-purple-600 hover:bg-purple-700 text-white py-1 px-3 rounded-lg text-sm">Add Friend</button>
-                    </div>
-                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-700 bg-gray-800 overflow-hidden shrink-0 shadow-lg">
-                        <img src="https://placehold.co/128x128/1f2937/ffffff?text=TH" alt="User Avatar">
-                    </div>
-                </div>
-            </div>
+              <!-- Container for content positioning -->
+             <div class="container mx-auto h-full relative px-4">
+				<div class="absolute bottom-4 right-0 md:right-8 p-4 flex items-center space-x-4">
+					<div class="text-right mb-2">
+						<h1 class="text-3xl md:text-4xl font-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TrophyHunter27</h1>
+						<p class="text-gray-300">Member since May 2024</p>
+						<button class="mt-2 bg-purple-600 hover:bg-purple-700 text-white py-1 px-3 rounded-lg text-sm">Add Friend</button>
+					</div>
+					<div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-700 bg-gray-800 overflow-hidden shrink-0">
+						<img src="https://placehold.co/128x128/1f2937/ffffff?text=TH" alt="User Avatar">
+					</div>
+				</div>
+			</div>
         </section>
 
         <!-- Container for the rest of the page content -->
         <div class="container mx-auto p-4 md:p-8">
 
-            <!-- =========== GLOBAL STATS SECTION =========== -->
-            <section class="mb-12">
-                 <!-- Unchanged from your version, it's great -->
-            </section>
-
-            <!-- =========== UNIFIED GAME LIBRARY =========== -->
-            <section>
-                <!-- Header with Tabs and Controls (Refined Styles) -->
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                    <div class="flex border-b-2 border-gray-700">
-                        <button data-tab-id="psn_library" class="tab-button py-2 px-5 text-gray-400 border-b-2 border-transparent hover:text-white transition-colors">PlayStation <span class="bg-gray-700 text-xs rounded-full px-2 py-0.5">50</span></button>
-                        <button data-tab-id="xbox_library" class="tab-button py-2 px-5 text-gray-400 border-b-2 border-transparent hover:text-white transition-colors">Xbox <span class="bg-gray-700 text-xs rounded-full px-2 py-0.5">30</span></button>
-                        <button data-tab-id="steam_library" class="tab-button py-2 px-5 text-gray-400 border-b-2 border-transparent hover:text-white transition-colors">Steam <span class="bg-gray-700 text-xs rounded-full px-2 py-0.5">10</span></button>
-                    </div>
-
-                    <div class="flex items-center space-x-2 mt-4 md:mt-0">
-                        <select id="sort_dropdown" class="bg-gray-800 border-gray-700 rounded-md p-2 text-sm focus:ring-purple-500 focus:border-purple-500">
-                            <!-- Options remain the same -->
-                        </select>
-                        <!-- View Toggle Buttons -->
-                        <div class="flex bg-gray-800 rounded-md p-1 space-x-1">
-                            <button id="view_grid_btn" class="p-1.5 rounded-md"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"></svg></button>
-                            <button id="view_list_btn" class="p-1.5 rounded-md"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"></svg></button>
+            <!-- =========== NEW GLOBAL STATS SECTION =========== -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-6 text-center md:text-left">Global Stats</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
+                        <p class="text-5xl font-bold text-green-400">78%</p>
+                        <p class="text-gray-400 mt-2">Average Completion</p>
+                         <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+                            <div class="bg-green-400 h-2.5 rounded-full" style="width: 78%"></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Tab Content Panels -->
-                <div>
-                    <div id="psn_library" class="library-panel"></div>
-                    <div id="xbox_library" class="library-panel hidden"></div>
-                    <div id="steam_library" class="library-panel hidden"></div>
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
+                        <p class="text-5xl font-bold text-yellow-400">121</p>
+                        <p class="text-gray-400 mt-2">Games Completed</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
+                        <p class="text-5xl font-bold text-blue-400">482</p>
+                        <p class="text-gray-400 mt-2">Total Games Played</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-500 shadow-lg">
+                        <p class="text-xl font-bold text-purple-400">Gamer Archetype</p>
+                        <p class="text-3xl font-bold mt-4">Soulslike Veteran</p>
+                        <p class="text-gray-400 mt-2 text-sm">Forged in the fires of difficulty.</p>
+                    </div>
                 </div>
             </section>
+
+           <!-- =========== UNIFIED GAME LIBRARY (From Your Original Code) =========== -->
+		<section>
+			<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+				<div class="flex border-b border-gray-700 mb-4 md:mb-0">
+					 <!-- Added `active` class and IDs to first button -->
+					<button id="btn-psn" onclick="changeLibraryTab(event, 'psn_library')" class="tab-button bg-gray-800 text-white py-2 px-6">PlayStation (50)</button>
+					<button id="btn-xbox" onclick="changeLibraryTab(event, 'xbox_library')" class="tab-button py-2 px-6 text-gray-400">Xbox (30)</button>
+					<button id="btn-steam" onclick="changeLibraryTab(event, 'steam_library')" class="tab-button py-2 px-6 text-gray-400">Steam (10)</button>
+				</div>
+				<div class="flex items-center space-x-3 mt-4 md:mt-0">
+					<select id="sort_dropdown" class="bg-gray-800 border border-gray-700 text-sm rounded-md p-2">
+						<option value="progress_desc">Sort: Progress ↓</option>
+						<option value="progress_asc">Sort: Progress ↑</option>
+						<option value="name_asc">Sort: Name (A-Z)</option>
+						<option value="last_played_desc">Sort: Last Played</option>
+					</select>
+					<div class="flex bg-gray-800 border border-gray-700 rounded-md p-0.5">
+						<!-- Added `active-view` class to grid btn -->
+						<button id="view_grid_btn" onclick="changeView('grid')" class="p-2 rounded-sm bg-purple-600 text-white active-view">
+						   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M 4 4 L 11 4 L 11 11 L 4 11 Z M 13 4 L 20 4 L 20 11 L 13 11 Z M 4 13 L 11 13 L 11 20 L 4 20 Z M 13 13 L 20 13 L 20 20 L 13 20 Z"/></svg>
+						</button>
+						<button id="view_list_btn" onclick="changeView('list')" class="p-2 rounded-sm text-gray-400">
+							 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M 3 5 L 21 5 L 21 7 L 3 7 Z M 3 11 L 21 11 L 21 13 L 3 13 Z M 3 17 L 21 17 L 21 19 L 3 19 Z"/></svg>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tab Content Panels -->
+			<div class="mt-8">
+				<div id="psn_library" class="library-panel">
+					<div class="view-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-8"></div>
+					<div class="view-list hidden flex flex-col space-y-3"></div>
+				</div>
+				<div id="xbox_library" class="library-panel hidden">
+					<div class="view-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-8"></div>
+					<div class="view-list hidden flex flex-col space-y-3"></div>
+				</div>
+				<div id="steam_library" class="library-panel hidden">
+				   <div class="view-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-8"></div>
+					<div class="view-list hidden flex flex-col space-y-3"></div>
+				</div>
+			</div>
+		</section>
+
         </div>
     </main>
     
-    <!-- LINK TO OUR EXTERNAL JAVASCRIPT FILE -->
-    <script src="assets/js/profile.js"></script>
+    <!-- Mobile Menu Script -->
+     <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+         if (mobileMenuButton && mobileMenu) {
+             mobileMenuButton.addEventListener('click', () => {
+                 mobileMenu.classList.toggle('hidden');
+             });
+         }
+     </script>
+    <!-- Link to YOUR JS Logic -->
+     <script src="assets/js/profile.js"></script>
 
 </body>
 </html>
