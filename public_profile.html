@@ -3,213 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viewing TrophyHunter27's Profile - Eternal Backlog</title>
+    <title>TrophyHunter27's Profile - Eternal Backlog</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-        .tab-button.active { color: #ffffff; border-bottom: 2px solid #a855f7; background-color: #1f2937; }
-        .tab-button { transition: all 0.2s; color: #9ca3af; border-radius: 6px 6px 0 0; }
-        .view-toggle button.active { background-color: #9333ea; color: #ffffff; }
-        .pagination-btn { background-color: #374151; color: #d1d5db; border-radius: 0.375rem; padding: 0.5rem 0.75rem; transition: background-color 0.2s; }
-        .pagination-btn:hover:not(:disabled) { background-color: #4b5563; }
-        .pagination-btn:disabled { background-color: #1f2937; color: #4b5563; cursor: not-allowed; }
+        .swiper-button-next, .swiper-button-prev { color: #fff; }
+        .swiper-pagination-bullet-active { background-color: #a855f7; /* Purple */ }
+        .tab-button.active { @apply border-purple-500 text-white; }
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-    <!-- HEADER -->
-    <header class="p-4 bg-gray-950">
+    <header class="fixed top-0 left-0 w-full z-30 p-4 bg-black/30 backdrop-blur-sm shadow-md">
         <div class="container mx-auto flex justify-between items-center">
              <div class="flex items-center space-x-8">
                 <a href="index.html" class="text-2xl font-bold text-white">Eternal Backlog</a>
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#" class="text-gray-200 hover:text-white">Games</a>
-                    <a href="#" class="text-gray-200 hover:text-white">Guides</a>
-                    <a href="#" class="text-gray-200 hover:text-white">Sessions</a>
-                    <a href="#" class="text-gray-200 hover:text-white">News</a>
+                    <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">My Dashboard</a>
                 </nav>
             </div>
-            <div class="flex items-center space-x-4">
-                 <span class="text-gray-200">Welcome, YourUsername</span>
+             <div class="flex items-center space-x-4">
+                 <span class="hidden sm:block text-gray-300">Viewing profile: <b>TrophyHunter27</b></span>
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
             </div>
         </div>
+        <div id="mobile-menu" class="hidden md:hidden container mx-auto mt-4 p-4 bg-gray-800 rounded-lg">
+           <nav class="flex flex-col space-y-4">
+               <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+               <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">My Dashboard</a>
+          </nav>
+       </div>
     </header>
 
     <main>
-        <!-- PROFILE HEADER -->
-        <section class="relative h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579546929518-9e-396f3cc809?q=80&w=2070&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
-            <div class="absolute bottom-4 right-0 md:right-8 p-4 flex items-center space-x-4">
-                <div class="text-right mb-2">
-                    <h1 class="text-3xl md:text-4xl font-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TrophyHunter27</h1>
-                    <p class="text-gray-300">Member since May 2024</p>
-                    <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-lg text-sm">Add Friend</button>
-                </div>
-                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-700 bg-gray-800 overflow-hidden shrink-0">
-                    <img src="https://placehold.co/128x128/1f2937/ffffff?text=TH" alt="User Avatar">
+        <section id="profile-header" class="relative pt-16 h-72 md:h-80 bg-cover bg-center bg-gradient-to-br from-cyan-900 via-gray-900 to-indigo-900">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>
+            <div class="container mx-auto h-full relative px-4">
+                <div class="absolute bottom-0 right-4 flex items-end space-x-4">
+                    <div class="text-right mb-2">
+                        <h1 class="text-3xl md:text-5xl font-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TrophyHunter27</h1>
+                        <div class="mt-2 bg-black/30 backdrop-blur-sm rounded-lg p-2 inline-flex items-center gap-x-2 border border-cyan-500/30">
+                           <span class="text-cyan-400 font-semibold">Match:</span>
+                           <span class="text-2xl font-bold">73%</span>
+                        </div>
+                        <div class="mt-3">
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm shadow-lg transition-transform hover:scale-105">Add Friend</button>
+                        </div>
+                    </div>
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-700 bg-gray-800 overflow-hidden shrink-0 shadow-lg">
+                        <img src="https://placehold.co/128x128/1f2937/ffffff?text=TH" alt="User Avatar">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Container for the rest of the page content -->
-        <div class="container mx-auto p-4 md:p-8">
-
-            <!-- GLOBAL STATS SECTION -->
-            <section class="mb-12">
-                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="md:col-span-2 bg-gradient-to-br from-purple-600 to-blue-600 p-6 rounded-lg flex flex-col items-center justify-center shadow-lg">
-                        <p class="text-lg font-bold text-white/90">Gaming Match</p>
-                        <p class="text-6xl font-bold text-white my-2">92%</p>
-                        <p class="text-white/80 text-sm">You both have a taste for challenging RPGs.</p>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
-                        <p class="text-base text-gray-400">Gamer Archetype</p>
-                        <p class="text-3xl font-bold text-purple-400 mt-2">Soulslike Veteran</p>
-                    </div>
-                     <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
-                        <p class="text-base text-gray-400">Platinum Trophies</p>
-                        <p class="text-3xl font-bold text-yellow-400 mt-2">42</p>
-                    </div>
+        <div class="container mx-auto p-4 md:p-8 space-y-16">
+            <section>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-gray-800 p-6 rounded-lg"><p class="text-5xl font-bold text-green-400">78%</p><p class="text-gray-400 mt-2">Avg. Completion</p></div>
+                    <div class="bg-gray-800 p-6 rounded-lg"><p class="text-5xl font-bold text-yellow-400">121</p><p class="text-gray-400 mt-2">Games Completed</p></div>
+                    <div class="bg-gray-800 p-6 rounded-lg"><p class="text-5xl font-bold text-blue-400">482</p><p class="text-gray-400 mt-2">Total Games Played</p></div>
+                    <div class="bg-gray-800 p-6 rounded-lg border-2 border-purple-500"><p class="text-xl font-bold text-purple-400">Gamer Archetype</p><p class="text-3xl font-bold mt-4">Soulslike Veteran</p></div>
                 </div>
             </section>
             
-            <!-- GAME LIBRARY -->
             <section>
-                <div class="flex justify-between items-center mb-6">
-                    <div id="tabs-container" class="flex border-b border-gray-700">
-                        <!-- JS will create tab buttons here -->
-                    </div>
-                    <div class="view-toggle hidden md:flex bg-gray-800 border border-gray-700 rounded-md">
-                        <button id="view_grid_btn" class="p-2 active"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM13 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/></svg></button>
-                        <button id="view_list_btn" class="p-2 text-gray-400"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg></button>
-                    </div>
+                <h2 class="text-3xl font-bold mb-6">Recently Played</h2>
+                <div class="flex border-b border-gray-700 mb-4">
+                    <button data-platform="psn_library" class="tab-button active py-2 px-5 text-sm font-semibold border-b-2 border-purple-500 text-white">PlayStation</button>
+                    <button data-platform="xbox_library" class="tab-button py-2 px-5 text-sm font-semibold border-b-2 border-transparent text-gray-400 hover:text-white">Xbox</button>
+                    <button data-platform="steam_library" class="tab-button py-2 px-5 text-sm font-semibold border-b-2 border-transparent text-gray-400 hover:text-white">Steam</button>
                 </div>
-
-                <div id="panels-container" class="min-h-[500px]">
-                    <!-- JS will create content panels here -->
+                <div id="recently_played_container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="text-gray-400">Loading recently played games...</div>
                 </div>
+            </section>
+            
+            <section>
+                <h2 class="text-3xl font-bold mb-6">Favorite Games Showcase</h2>
+                <div class="swiper favorite-games-swiper h-64 md:h-80 rounded-lg">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
-                <div id="pagination-container" class="flex justify-center items-center space-x-2 mt-8">
-                    <!-- JS will create pagination buttons here -->
+            <section>
+                <h2 class="text-3xl font-bold mb-6">Latest Reviews</h2>
+                <div id="reviews-container" class="space-y-6">
+                     <p class="text-gray-500">This user hasn't written any reviews yet.</p>
                 </div>
             </section>
         </div>
     </main>
     
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // --- 1. CONFIG & STATE ---
-        const ITEMS_PER_PAGE = 30;
-        let MOCK_GAMES = {};
-        let currentView = 'grid';
-        let activeTab = 'psn';
-        let currentPage = 1;
-
-        // --- 2. DATA GENERATION ---
-        const gameTemplates = {
-            psn: { count: 50, unit: 'trophies', names: ["The Last of Us Part II", "Ghost of Tsushima", "Elden Ring", "Bloodborne", "God of War Ragnarök"] },
-            xbox: { count: 30, unit: 'G', names: ["Halo Infinite", "Gears 5", "Forza Horizon 5", "Starfield"] },
-            steam: { count: 10, unit: 'achievements', names: ["Baldur's Gate 3", "Counter-Strike 2", "Stardew Valley"] }
-        };
-
-        for (const [platform, config] of Object.entries(gameTemplates)) {
-            MOCK_GAMES[platform] = [];
-            for (let i = 0; i < config.count; i++) {
-                const title = config.names[i] || `${platform.charAt(0).toUpperCase() + platform.slice(1)} Game ${i + 1}`;
-                const total = platform === 'xbox' ? 1000 : Math.floor(Math.random() * 60) + 20;
-                const progress = Math.floor(Math.random() * 101);
-                MOCK_GAMES[platform].push({
-                    title: title,
-                    platform: platform,
-                    progress: progress,
-                    total: total,
-                    earned: Math.round(total * (progress / 100)),
-                    unit: config.unit,
-                    globalCompletion: Math.floor(Math.random() * 50) + 5,
-                    imgUrl: `https://picsum.photos/300/400?random=${encodeURIComponent(title)}`
-                });
-            }
-        }
-        
-        // --- 3. RENDERING FUNCTIONS ---
-        const getRank = (progress) => {
-            if (progress === 100) return { letter: 'S', color: '#facc15', textColor: 'text-yellow-400', borderColor: 'border-yellow-400' };
-            if (progress >= 90) return { letter: 'A', color: '#a855f7', textColor: 'text-purple-400', borderColor: 'border-purple-400' };
-            if (progress >= 70) return { letter: 'B', color: '#3b82f6', textColor: 'text-blue-400', borderColor: 'border-blue-400' };
-            if (progress >= 40) return { letter: 'C', color: '#22c55e', textColor: 'text-green-400', borderColor: 'border-green-400' };
-            if (progress >= 10) return { letter: 'D', color: '#eab308', textColor: 'text-yellow-600', borderColor: 'border-yellow-600' };
-            if (progress > 0) return { letter: 'E', color: '#ef4444', textColor: 'text-red-500', borderColor: 'border-red-500' };
-            return { letter: '-', color: '#6b7280', textColor: 'text-gray-400', borderColor: 'border-gray-500' };
-        };
-        const createGridCardHTML = (game) => {
-            const rank = getRank(game.progress);
-            return `<div class="bg-gray-800 rounded-lg group overflow-hidden flex flex-col text-sm"><div class="relative"><img src="${game.imgUrl}" alt="${game.title}" class="w-full object-cover aspect-[3/4]"><div class="absolute top-2 right-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/80 border-2 ${rank.borderColor}"><span class="text-2xl font-bold ${rank.textColor}">${rank.letter}</span></div></div><div class="p-2 flex-grow flex flex-col"><p class="font-bold truncate">${game.title}</p><div class="mt-2 w-full"><div class="flex justify-between text-xs text-gray-400 mb-1"><span>${game.earned}/${game.total} ${game.unit}</span><span>${game.progress}%</span></div><div class="w-full bg-gray-700 rounded-full h-1.5"><div class="h-1.5 rounded-full" style="width: ${game.progress}%; background-color: ${rank.color};"></div></div></div><div class="mt-auto pt-2 text-center border-t border-gray-700/50 mt-2"><p class="text-xs text-gray-500">Global Completion</p><p class="text-base font-semibold text-blue-400">${game.globalCompletion}%</p></div></div></div>`;
-        };
-        const createListRowHTML = (game) => {
-            const rank = getRank(game.progress);
-            return `<div class="bg-gray-800 p-2 rounded-md flex items-center space-x-4 text-sm"><img src="${game.imgUrl}" alt="${game.title}" class="w-10 h-14 object-cover rounded-sm shrink-0"><p class="font-bold flex-grow truncate">${game.title}</p><div class="w-48 hidden md:block"><div class="flex justify-between text-xs text-gray-400 mb-1"><span>${game.earned}/${game.total} ${game.unit}</span><span>${game.progress}%</span></div><div class="w-full bg-gray-700 rounded-full h-1.5"><div class="h-1.5 rounded-full" style="width: ${game.progress}%; background-color: ${rank.color};"></div></div></div><p class="hidden lg:block w-24 text-center text-blue-400">${game.globalCompletion}% <span class="text-gray-500 text-xs block">Global</span></p><div class="hidden sm:flex w-10 h-10 items-center justify-center rounded-full border-2 ${rank.borderColor} shrink-0"><span class="text-2xl font-bold ${rank.textColor}">${rank.letter}</span></div></div>`;
-        };
-        
-        // --- 4. THE MAIN RENDER FUNCTION ---
-        const tabsContainer = document.getElementById('tabs-container');
-        const panelsContainer = document.getElementById('panels-container');
-        const paginationContainer = document.getElementById('pagination-container');
-        
-        function render() {
-            // -- Render Tabs --
-            tabsContainer.innerHTML = Object.keys(MOCK_GAMES).map(platform => `
-                <button class="tab-button py-2 px-6 ${platform === activeTab ? 'active' : ''}" data-platform="${platform}">
-                    ${platform.charAt(0).toUpperCase() + platform.slice(1)} (${MOCK_GAMES[platform].length})
-                </button>
-            `).join('');
-
-            // -- Pagination Logic --
-            const gamesForCurrentTab = MOCK_GAMES[activeTab];
-            const totalPages = Math.ceil(gamesForCurrentTab.length / ITEMS_PER_PAGE);
-            const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-            const gamesToShow = gamesForCurrentTab.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-            // -- Render Content Panel --
-            const gridHTML = `<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-6">${gamesToShow.map(createGridCardHTML).join('')}</div>`;
-            const listHTML = `<div class="flex flex-col space-y-2">${gamesToShow.map(createListRowHTML).join('')}</div>`;
-            panelsContainer.innerHTML = currentView === 'grid' ? gridHTML : listHTML;
-            
-            // -- Render Pagination --
-            paginationContainer.innerHTML = '';
-            if (totalPages > 1) {
-                paginationContainer.innerHTML = `
-                    <button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">« Prev</button>
-                    <span class="text-sm text-gray-400">Page ${currentPage} of ${totalPages}</span>
-                    <button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">Next »</button>
-                `;
-            }
-        }
-        
-        // --- 5. EVENT LISTENERS ---
-        document.getElementById('view_grid_btn').addEventListener('click', () => { currentView = 'grid'; render(); });
-        document.getElementById('view_list_btn').addEventListener('click', () => { currentView = 'list'; render(); });
-        
-        tabsContainer.addEventListener('click', (e) => {
-            const button = e.target.closest('.tab-button');
-            if (button) {
-                activeTab = button.dataset.platform;
-                currentPage = 1;
-                render();
-            }
-        });
-        
-        paginationContainer.addEventListener('click', (e) => {
-             const button = e.target.closest('.pagination-btn');
-             if(button && !button.disabled) {
-                 currentPage = parseInt(button.dataset.page);
-                 render();
-             }
-        });
-
-        // --- 6. INITIAL RENDER ---
-        render();
-
-    });
+        const mobMenuBtn = document.getElementById('mobile-menu-button'), mobMenu = document.getElementById('mobile-menu');
+        if (mobMenuBtn && mobMenu) { mobMenuBtn.addEventListener('click', () => { mobMenu.classList.toggle('hidden'); }); }
     </script>
+    <script src="assets/js/public_profile.js"></script>
 </body>
 </html>
