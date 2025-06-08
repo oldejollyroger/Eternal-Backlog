@@ -20,35 +20,55 @@
 <body class="bg-gray-900 text-white font-sans">
 <!-- =========== HEADER / NAVIGATION =========== -->
 <header class="fixed top-0 left-0 w-full z-30 p-4 bg-black/30 backdrop-blur-sm shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-8">
-                 <a href="index.html" class="text-2xl font-bold text-white">Eternal Backlog</a>
-                <nav class="hidden md:flex items-center space-x-6">
-                    <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">My Dashboard</a>
-					<a href="user_profile.html" class="text-gray-300 hover:text-white transition-colors">My Profile</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Sessions</a>
-                </nav>
-            </div>
-           <div class="flex items-center space-x-4">
-                 <span class="hidden sm:block text-gray-300">Viewing: TrophyHunter27</span>
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
+    <div class="container mx-auto flex justify-between items-center">
+        
+        <!-- Left Side: Logo and Main Navigation -->
+        <div class="flex items-center space-x-8">
+            <!-- UPDATED: Logo is now fixed to the top left -->
+            <a href="index.html" class="text-2xl font-bold text-white">Eternal Backlog</a>
+            
+            <!-- NEW: Expanded Navigation for Logged-In Users -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Games</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Gaming Sessions</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Trophies</a>
+            </nav>
         </div>
-       <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden container mx-auto mt-4 p-4 bg-gray-800 rounded-lg">
-           <nav class="flex flex-col space-y-4">
-               <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
-               <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">My Dashboard</a>
-               <a href="user_profile.html" class="text-gray-300 hover:text-white transition-colors">My Profile</a>
-			    <hr class="border-gray-700">
-               <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
-               <a href="#" class="text-gray-300 hover:text-white transition-colors">Sessions</a>
-          </nav>
-       </div>
-    </header>
+
+        <!-- Right Side: User Menu -->
+        <div class="flex items-center space-x-4">
+            <!-- NEW: Link to the Dashboard -->
+            <a href="dashboard.html" class="hidden sm:block bg-gray-700/50 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors">
+                Dashboard
+            </a>
+            
+            <!-- NEW: User Avatar linking to their Public Profile -->
+            <a href="public_profile.html" class="block w-10 h-10 rounded-full border-2 border-transparent hover:border-purple-500 transition-colors">
+                <img class="h-full w-full rounded-full object-cover" src="https://placehold.co/100x100/1f2937/ffffff?text=TH" alt="User Avatar">
+            </a>
+
+            <!-- Mobile Menu Button (Hamburger Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Panel (Must be updated to match new nav) -->
+    <div id="mobile-menu" class="hidden md:hidden container mx-auto mt-4 p-4 bg-gray-800 rounded-lg">
+       <nav class="flex flex-col space-y-4">
+           <!-- Links for mobile view -->
+           <a href="#" class="text-gray-300 hover:text-white transition-colors">Games</a>
+           <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
+           <a href="#" class="text-gray-300 hover:text-white transition-colors">Gaming Sessions</a>
+           <a href="#" class="text-gray-300 hover:text-white transition-colors">Trophies</a>
+           <hr class="border-gray-700">
+           <a href="dashboard.html" class="bg-gray-700 text-center text-white font-semibold py-2 px-4 rounded-lg">My Dashboard</a>
+           <a href="public_profile.html" class="bg-purple-600 text-center text-white font-semibold py-2 px-4 rounded-lg">My Profile</a>
+      </nav>
+   </div>
+</header>
 <main>
    <!-- =========== HERO SLIDESHOW SECTION =========== -->
 
