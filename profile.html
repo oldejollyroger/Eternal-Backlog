@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrophyHunter27's Profile - Eternal Backlog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <!-- HEADER (No changes needed here) -->
+    <header class="p-4 bg-gray-950">
+        <div class="container mx-auto flex justify-between items-center">
+             <div class="flex items-center space-x-8">
+                <a href="index.html" class="text-2xl font-bold text-white">Eternal Backlog</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-gray-200 hover:text-white">Games</a>
+                    <a href="#" class="text-gray-200 hover:text-white">Guides</a>
+                    <a href="#" class="text-gray-200 hover:text-white">Sessions</a>
+                    <a href="#" class="text-gray-200 hover:text-white">News</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                 <span class="text-gray-200">Welcome, TrophyHunter27</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========== PROFILE HEADER WITH COVER IMAGE =========== -->
+        <section class="relative h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
+            <div class="absolute bottom-4 right-0 md:right-8 p-4 flex items-center space-x-4">
+                <div class="text-right mb-2">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TrophyHunter27</h1>
+                    <p class="text-gray-300">Member since May 2024</p>
+                    <button class="mt-2 bg-purple-600 hover:bg-purple-700 text-white py-1 px-3 rounded-lg text-sm">Add Friend</button>
+                </div>
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-700 bg-gray-800 overflow-hidden shrink-0">
+                    <img src="https://placehold.co/128x128/1f2937/ffffff?text=TH" alt="User Avatar">
+                </div>
+            </div>
+        </section>
+
+        <!-- Container for the rest of the page content -->
+        <div class="container mx-auto p-4 md:p-8">
+
+            <!-- =========== NEW GLOBAL STATS SECTION =========== -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-6 text-center md:text-left">Global Stats</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    
+                    <!-- Stat 1: Avg. Completion -->
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
+                        <p class="text-5xl font-bold text-green-400">78%</p>
+                        <p class="text-gray-400 mt-2">Average Completion</p>
+                        <!-- Placeholder for a radial progress bar -->
+                        <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+                            <div class="bg-green-400 h-2.5 rounded-full" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 2: Completed Games -->
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
+                        <p class="text-5xl font-bold text-yellow-400">121</p>
+                        <p class="text-gray-400 mt-2">Games Completed</p>
+                    </div>
+
+                    <!-- Stat 3: Total Games Played -->
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center">
+                        <p class="text-5xl font-bold text-blue-400">482</p>
+                        <p class="text-gray-400 mt-2">Total Games Played</p>
+                    </div>
+
+                    <!-- Stat 4: Gamer Archetype -->
+                    <div class="bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-500 shadow-lg">
+                        <p class="text-xl font-bold text-purple-400">Gamer Archetype</p>
+                        <p class="text-3xl font-bold mt-4">Soulslike Veteran</p>
+                        <p class="text-gray-400 mt-2 text-sm">Forged in the fires of difficulty.</p>
+                    </div>
+
+                </div>
+            </section>
+
+           <!-- =========== NEW UNIFIED GAME LIBRARY (POPULATED V3.1) =========== -->
+<!-- =========== UNIFIED GAME LIBRARY WITH CONTROLS (v3.2) =========== -->
+<section>
+    <!-- Header with Tabs and New Controls -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+        <!-- Tab Buttons -->
+        <div class="flex border-b border-gray-700">
+            <button onclick="changeLibraryTab(event, 'psn_library')" class="tab-button bg-gray-800 text-white py-2 px-6">PlayStation (50)</button>
+            <button onclick="changeLibraryTab(event, 'xbox_library')" class="tab-button py-2 px-6">Xbox (30)</button>
+            <button onclick="changeLibraryTab(event, 'steam_library')" class="tab-button py-2 px-6">Steam (10)</button>
+        </div>
+
+        <!-- New: Sort, Filter, and View Controls -->
+        <div class="flex items-center space-x-2 mt-4 md:mt-0">
+            <!-- Sort Dropdown Placeholder -->
+            <select id="sort_dropdown" class="bg-gray-800 border border-gray-700 rounded-md p-2 text-sm">
+    <option value="progress_desc">Sort by: Progress (High to Low)</option>
+    <option value="progress_asc">Sort by: Progress (Low to High)</option>
+    <option value="name_asc">Sort by: Name (A-Z)</option>
+    <option value="last_played_desc">Sort by: Last Played</option>
+</select>
+            <!-- Filter Button Placeholder -->
+            <button class="bg-gray-800 border border-gray-700 rounded-md p-2 text-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L16 11.414V16a1 1 0 01-.293.707l-2 2A1 1 0 0113 18v-2.586l-3.707-3.707A1 1 0 019 11V6a1 1 0 01-.293-.707L8 4.586A1 1 0 018 4H4a1 1 0 01-1-1z"/></svg>
+            </button>
+            <!-- View Toggle Buttons -->
+            <div class="flex bg-gray-800 border border-gray-700 rounded-md">
+                <button id="view_grid_btn" onclick="changeView('grid')" class="p-2 bg-purple-600 text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM13 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/></svg>
+                </button>
+                <button id="view_list_btn" onclick="changeView('list')" class="p-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Content Panels -->
+    <div>
+        <!-- PlayStation Library -->
+        <div id="psn_library" class="library-panel">
+            <!-- Grid View Container -->
+            <div class="view-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-6">
+                <!-- Grid content will be generated by JS -->
+            </div>
+            <!-- List View Container (hidden by default) -->
+            <div class="view-list hidden flex flex-col space-y-2">
+                <!-- List content will be generated by JS -->
+            </div>
+        </div>
+        <!-- Xbox Library -->
+        <div id="xbox_library" class="library-panel hidden">
+            <!-- Grid View Container -->
+            <div class="view-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-6"></div>
+            <!-- List View Container (hidden) -->
+            <div class="view-list hidden flex flex-col space-y-2"></div>
+        </div>
+        <!-- Steam Library -->
+        <div id="steam_library" class="library-panel hidden">
+            <!-- Grid View Container -->
+            <div class="view-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-6"></div>
+            <!-- List View Container (hidden) -->
+            <div class="view-list hidden flex flex-col space-y-2"></div>
+        </div>
+    </div>
+</section>
+
+        </div>
+    </main>
+    
+    <!-- JavaScript for Tabs -->
+    <script>
+   (function() { // Using an IIFE to keep our code self-contained and clean
+
+    // --- MOCK DATABASE: Real Game Titles and Data ---
+    const MOCK_GAME_DATA = {
+        psn: [
+            { title: "The Last of Us Part II", total: 26, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=TLOU2" },
+            { title: "Ghost of Tsushima", total: 52, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=GoT" },
+            { title: "Elden Ring", total: 42, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=Elden+Ring" },
+            { title: "Bloodborne", total: 34, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=Bloodborne" },
+            { title: "God of War Ragnarök", total: 36, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=GoW+R" },
+            { title: "Marvel's Spider-Man 2", total: 42, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=Spider-Man+2" },
+            { title: "Horizon Forbidden West", total: 59, imgUrl: "https://placehold.co/300x400/2d3748/ffffff?text=HFW" },
+            // ... We will auto-generate the rest to reach 50 total games
+        ],
+        xbox: [
+            { title: "Halo Infinite", total: 1000, imgUrl: "https://placehold.co/300x400/107c10/ffffff?text=Halo" },
+            { title: "Gears 5", total: 1000, imgUrl: "https://placehold.co/300x400/107c10/ffffff?text=Gears+5" },
+            { title: "Forza Horizon 5", total: 1000, imgUrl: "https://placehold.co/300x400/107c10/ffffff?text=Forza+5" },
+            { title: "Starfield", total: 1000, imgUrl: "https://placehold.co/300x400/107c10/ffffff?text=Starfield" },
+            // ... We will auto-generate the rest to reach 30 total games
+        ],
+        steam: [
+            { title: "Baldur's Gate 3", total: 53, imgUrl: "https://placehold.co/300x400/1b2838/ffffff?text=BG3" },
+            { title: "Counter-Strike 2", total: 0, imgUrl: "https://placehold.co/300x400/1b2838/ffffff?text=CS2" }, // Games with no achievements
+            { title: "Stardew Valley", total: 30, imgUrl: "https://placehold.co/300x400/1b2838/ffffff?text=Stardew" },
+            // ... We will auto-generate the rest to reach 10 total games
+        ]
+    };
+
+    let allGames = {}; // This will hold the full, generated game data
+    let currentSort = 'progress_desc'; // Default sort
+
+    // --- HELPER FUNCTIONS ---
+    function getRank(progress) {
+        if (progress === 100) return { letter: 'S', color: '#facc15', textColor: 'text-yellow-400', borderColor: 'border-yellow-400' };
+        if (progress >= 90) return { letter: 'A', color: '#a855f7', textColor: 'text-purple-400', borderColor: 'border-purple-400' };
+        // ... (rest of the rank logic is the same)
+        if (progress >= 70) return { letter: 'B', color: '#3b82f6', textColor: 'text-blue-400', borderColor: 'border-blue-400' };
+        if (progress >= 40) return { letter: 'C', color: '#22c55e', textColor: 'text-green-400', borderColor: 'border-green-400' };
+        if (progress >= 10) return { letter: 'D', color: '#eab308', textColor: 'text-yellow-600', borderColor: 'border-yellow-600' };
+        if (progress > 0) return { letter: 'E', color: '#ef4444', textColor: 'text-red-500', borderColor: 'border-red-500' };
+        return { letter: '-', color: '#6b7280', textColor: 'text-gray-400', borderColor: 'border-gray-500' };
+    }
+
+    // --- HTML RENDERING FUNCTIONS ---
+    function createGridCard(game) { /* This function remains identical to the previous version */ 
+        const rank = getRank(game.progress);
+        return `
+        <div class="bg-gray-800 rounded-lg group overflow-hidden flex flex-col text-sm">
+            <div class="relative">
+                <img src="${game.imgUrl}" alt="${game.title}" class="w-full object-cover aspect-[3/4]">
+                <div class="absolute top-2 right-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/80 border-2 ${rank.borderColor}">
+                    <span class="text-2xl font-bold ${rank.textColor}">${rank.letter}</span>
+                </div>
+            </div>
+            <div class="p-2 flex-grow flex flex-col">
+                <p class="font-bold truncate">${game.title}</p>
+                <div class="mt-2 w-full"><div class="flex justify-between text-xs text-gray-400 mb-1"><span>${game.earned}/${game.total} ${game.unit}</span><span>${game.progress}%</span></div><div class="w-full bg-gray-700 rounded-full h-1.5"><div class="h-1.5 rounded-full" style="width: ${game.progress}%; background-color: ${rank.color};"></div></div></div>
+                <div class="mt-auto pt-2 text-center border-t border-gray-700/50 mt-2"><p class="text-xs text-gray-500">Global Completion</p><p class="text-base font-semibold text-blue-400">${game.globalCompletion}%</p></div>
+            </div>
+        </div>`;
+    }
+
+    function createListRow(game) { /* This function also remains identical */
+        const rank = getRank(game.progress);
+         return `
+        <div class="bg-gray-800 p-2 rounded-md flex items-center space-x-4 text-sm">
+            <img src="${game.imgUrl}" alt="${game.title}" class="w-10 h-14 object-cover rounded-sm shrink-0">
+            <p class="font-bold flex-grow truncate">${game.title}</p>
+            <div class="w-48 hidden md:block"><div class="flex justify-between text-xs text-gray-400 mb-1"><span>${game.earned}/${game.total} ${game.unit}</span><span>${game.progress}%</span></div><div class="w-full bg-gray-700 rounded-full h-1.5"><div class="h-1.5 rounded-full" style="width: ${game.progress}%; background-color: ${rank.color};"></div></div></div>
+            <p class="hidden lg:block w-24 text-center text-blue-400">${game.globalCompletion}% <span class="text-gray-500 text-xs block">Global</span></p>
+            <div class="hidden sm:flex w-10 h-10 items-center justify-center rounded-full border-2 ${rank.borderColor} shrink-0"><span class="text-2xl font-bold ${rank.textColor}">${rank.letter}</span></div>
+            <p class="hidden xl:block w-32 text-center text-gray-400">${game.lastPlayed.toLocaleDateString()} <span class="text-gray-500 text-xs block">Last Played</span></p>
+        </div>`;
+    }
+    
+    // --- DATA POPULATION & SORTING ---
+    function renderPlatform(platformId) {
+        let games = allGames[platformId];
+        if (!games) return;
+
+        // ** NEW: Sorting Logic **
+        games.sort((a, b) => {
+            switch (currentSort) {
+                case 'progress_desc': return b.progress - a.progress;
+                case 'progress_asc': return a.progress - b.progress;
+                case 'name_asc': return a.title.localeCompare(b.title);
+                case 'last_played_desc': return b.lastPlayed - a.lastPlayed;
+                default: return 0;
+            }
+        });
+
+        const gridContainer = document.querySelector(`#${platformId} .view-grid`);
+        const listContainer = document.querySelector(`#${platformId} .view-list`);
+        if (!gridContainer || !listContainer) return;
+        
+        let gridContent = '';
+        let listContent = '';
+        games.forEach(game => {
+            gridContent += createGridCard(game);
+            listContent += createListRow(game);
+        });
+        
+        gridContainer.innerHTML = gridContent;
+        listContainer.innerHTML = listContent;
+    }
+
+    // --- UI EVENT HANDLING ---
+    function changeLibraryTab(event, tabID) {
+        document.querySelectorAll('.library-panel').forEach(p => p.classList.add('hidden'));
+        document.querySelectorAll('.tab-button').forEach(b => {
+            b.classList.remove('bg-gray-800', 'text-white');
+            b.style.color = '#9ca3af';
+        });
+        const activePanel = document.getElementById(tabID);
+        activePanel.classList.remove('hidden');
+        event.currentTarget.classList.add('bg-gray-800', 'text-white');
+        // Re-render the content for the new tab to apply sorting
+        renderPlatform(tabID);
+    }
+
+    function changeView(view) { /* This function remains identical */ 
+        const gridBtn = document.getElementById('view_grid_btn');
+        const listBtn = document.getElementById('view_list_btn');
+
+        document.querySelectorAll('.view-grid').forEach(el => view === 'grid' ? el.classList.remove('hidden') : el.classList.add('hidden'));
+        document.querySelectorAll('.view-list').forEach(el => view === 'list' ? el.classList.remove('hidden') : el.classList.add('hidden'));
+        
+        if (view === 'grid') {
+            gridBtn.classList.add('bg-purple-600', 'text-white');
+            listBtn.classList.remove('bg-purple-600', 'text-white');
+        } else {
+            listBtn.classList.add('bg-purple-600', 'text-white');
+            gridBtn.classList.remove('bg-purple-600', 'text-white');
+        }
+    }
+    
+    // ** NEW: Function to handle sort changes **
+    function handleSortChange(event) {
+        currentSort = event.target.value;
+        const activeTab = document.querySelector('.tab-button.bg-gray-800').onclick.toString().match(/'([^']+)'/)[1];
+        renderPlatform(activeTab);
+    }
+
+    // --- INITIAL PAGE LOAD ---
+    document.addEventListener('DOMContentLoaded', () => {
+        // Full Data Generation
+        allGames['psn_library'] = MOCK_GAME_DATA.psn.concat(Array.from({ length: 43 }, (_, i) => ({ title: `PlayStation Game ${i + 8}`, total: Math.floor(Math.random() * 40) + 20, imgUrl: `https://placehold.co/300x400/2d3748/ffffff?text=PS+Game+${i + 8}` })));
+        allGames['xbox_library'] = MOCK_GAME_DATA.xbox.concat(Array.from({ length: 26 }, (_, i) => ({ title: `Xbox Game ${i + 5}`, total: 1000, imgUrl: `https://placehold.co/300x400/107c10/ffffff?text=Xbox+Game+${i + 5}` })));
+        allGames['steam_library'] = MOCK_GAME_DATA.steam.concat(Array.from({ length: 7 }, (_, i) => ({ title: `Steam Game ${i + 4}`, total: Math.floor(Math.random() * 80) + 20, imgUrl: `https://placehold.co/300x400/1b2838/ffffff?text=Steam+Game+${i + 4}` })));
+
+        // Add random progress and dates to all games
+        Object.values(allGames).flat().forEach(game => {
+            game.progress = Math.floor(Math.random() * 101);
+            game.earned = Math.round(game.total * (game.progress / 100));
+            game.unit = game.total === 1000 ? 'G' : 'trophies'; // Simple unit logic for Xbox
+            game.globalCompletion = Math.floor(Math.random() * 50) + 5;
+            game.lastPlayed = new Date(new Date() - Math.random() * 1e12); // Random date in the past ~30 years
+        });
+        
+        // Attach event listeners
+        window.changeLibraryTab = changeLibraryTab; // Make functions globally accessible
+        window.changeView = changeView;
+        document.getElementById('sort_dropdown').addEventListener('change', handleSortChange);
+        
+        // Initial render
+        renderPlatform('psn_library');
+        document.querySelector('.tab-button').click(); // Activate first tab
+    });
+
+})(); // End of the IIFE
+    </script>
+
+</body>
+</html>

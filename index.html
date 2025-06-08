@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Backlog - Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<style>
+    /* A little custom CSS for the gradient text */
+    .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+</style>
+
+</head>
+<body class="bg-gray-900 text-white font-sans">
+<!-- =========== HEADER / NAVIGATION =========== -->
+<header class="fixed top-0 left-0 w-full z-30 p-4 bg-black/30 backdrop-blur-sm shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+        
+        <!-- Left Side: Logo and Main Nav Links -->
+        <div class="flex items-center space-x-8">
+            <a href="#" class="text-2xl font-bold text-white">Eternal Backlog</a>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Games</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Guides</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Sessions</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">News</a>
+            </nav>
+        </div>
+
+        <!-- Right Side: Auth Buttons and Mobile Menu -->
+        <div class="flex items-center space-x-4">
+            <!-- Desktop Auth -->
+            <a href="#" class="hidden sm:block text-gray-300 hover:text-white transition-colors">Login</a>
+            <a href="#" class="hidden sm:block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Create Account</a>
+            <!-- Mobile Menu Button (Hamburger Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Panel (Initially hidden) -->
+    <div id="mobile-menu" class="hidden md:hidden container mx-auto mt-4">
+        <nav class="flex flex-col space-y-4">
+             <a href="#" class="text-gray-300 hover:text-white transition-colors px-2 py-1">Games</a>
+             <a href="#" class="text-gray-300 hover:text-white transition-colors px-2 py-1">Guides</a>
+             <a href="#" class="text-gray-300 hover:text-white transition-colors px-2 py-1">Sessions</a>
+             <a href="#" class="text-gray-300 hover:text-white transition-colors px-2 py-1">News</a>
+             <hr class="border-gray-700">
+             <a href="#" class="text-gray-300 hover:text-white transition-colors px-2 py-1">Login</a>
+             <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors w-full text-center">Create Account</a>
+        </nav>
+    </div>
+</header>
+<main>
+   <!-- =========== HERO SLIDESHOW SECTION =========== -->
+
+   <section class="relative w-full h-[550px] bg-gray-900">
+  <!-- Swiper -->
+  <div class="swiper h-full">
+    <div class="swiper-wrapper">
+<!-- SLIDE 1: A Featured Guide -->
+  <div class="swiper-slide">
+    <div class="w-full h-full flex items-center justify-center text-center text-white bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=2070&auto=format&fit=crop');">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 p-4 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-bold">New Guide: Elden Ring 100% Walkthrough</h2>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-300">Our most comprehensive guide yet is now live!</p>
+        <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg inline-block">Read The Guide</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: A Featured News Item -->
+  <div class="swiper-slide">
+     <div class="w-full h-full flex items-center justify-center text-center text-white bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1616594418341-445657879155?q=80&w=2070&auto=format&fit=crop');">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 p-4 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-bold">Major Publisher Announces New Sci-Fi RPG</h2>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-300">Get the first details on this exciting new title.</p>
+        <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg inline-block">See The News</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Add Pagination (the dots) -->
+<div class="swiper-pagination"></div>
+<!-- Add Navigation Arrows -->
+<div class="swiper-button-prev text-white"></div>
+<div class="swiper-button-next text-white"></div>
+</div>
+</section>
+<!-- =========== CORE CONTENT SECTION =========== -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">Community Hub</h3>
+
+            <!-- Two-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                
+                <!-- Left Column: Guides -->
+                <div class="space-y-4">
+                    <h4 class="text-2xl font-semibold border-b-2 border-purple-500 pb-2">Latest Guides</h4>
+                    <!-- Guide Card 1 -->
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 cursor-pointer">
+                        <div>
+                            <p class="font-bold">Elden Ring - All Legendary Talismans</p>
+                            <p class="text-sm text-gray-400">by RanniTheWitch</p>
+                        </div>
+                        <span class="text-purple-400">→</span>
+                    </div>
+                    <!-- Guide Card 2 -->
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 cursor-pointer">
+                         <div>
+                            <p class="font-bold">Baldur's Gate 3 - Best Class Builds</p>
+                            <p class="text-sm text-gray-400">by AstarionLover</p>
+                        </div>
+                        <span class="text-purple-400">→</span>
+                    </div>
+                    <!-- Guide Card 3 -->
+                       <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 cursor-pointer">
+                         <div>
+                            <p class="font-bold">Cyberpunk 2077 - Phantom Liberty Endings</p>
+                            <p class="text-sm text-gray-400">by AstarionLover</p>
+                        </div>
+                        <span class="text-purple-400">→</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sessions -->
+                <div class="space-y-4">
+                    <h4 class="text-2xl font-semibold border-b-2 border-purple-500 pb-2">Active Sessions</h4>
+                    <!-- Session Card 1 -->
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 cursor-pointer">
+                        <div>
+                            <p class="font-bold">Helldivers 2 - Suicide Mission</p>
+                            <p class="text-sm text-gray-400">3/4 Players</p>
+                        </div>
+                         <!-- SVG Icon for PlayStation -->
+<!-- SVG Icon for PlayStation -->
+<svg class="w-6 h-6 text-blue-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>PlayStation</title><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.03 4.542h2.82c1.782 0 1.938.163 1.938 1.938v2.82c0 .285-.23.515-.515.515h-2.14v3.3h2.14c.285 0 .515.23.515.515v2.82c0 1.775-.156 1.938-1.938 1.938h-2.82c-1.782 0-1.938-.163-1.938-1.938v-2.82c0-.285.23-.515.515-.515h2.14v-3.3h-2.14c-.285 0-.515-.23-.515-.515V6.48c0-1.775.156-1.938 1.938-1.938zm-3.52 7.043c-.237.238-.237.625 0 .863l2.81 2.81c.238.238.625.238.863 0l1.405-1.405c.237-.238.237-.625 0-.863l-2.81-2.81c-.238-.238-.625-.238-.863 0l-1.405 1.405zm8.933-.863l1.405-1.405c.238-.238.238-.625 0-.863l-2.81-2.81c-.238-.238-.625-.238-.863 0l-1.405 1.405c-.238.238-.238.625 0 .863l2.81 2.81c.238.238.625.238.863 0z"/></svg>                    </div>
+                    <!-- Session Card 2 -->
+                     <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 cursor-pointer">
+                        <div>
+                            <p class="font-bold">Diablo IV - World Boss Farming</p>
+                            <p class="text-sm text-gray-400">2/4 Players</p>
+                        </div>
+                         <!-- SVG Icon for Xbox -->
+<!-- SVG Icon for Xbox -->
+<svg class="w-6 h-6 text-green-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Xbox</title><path d="M11.998 2.39a10.024 10.024 0 0 0-8.252 4.414 10.03 10.03 0 0 0 .15 10.375A10.026 10.026 0 0 0 12 21.61a10.022 10.022 0 0 0 9.17-5.592 10.031 10.031 0 0 0-1.025-10.96A10.026 10.026 0 0 0 11.998 2.39zm-6.84 5.925c-.225.435-.412.893-.563 1.365a8.64 8.64 0 0 1 3.53-3.69c-.99.533-1.897 1.2-2.692 2.01l-.275.315zm9.957-.052c.81.773 1.52 1.636 2.122 2.573a8.64 8.64 0 0 1-3.67 3.517c.975-.623 1.835-1.41 2.548-2.34v-.023a10.53 10.53 0 0 1-1-.727zM4.17 12.015c.03-.495.09-.983.18-1.463A8.634 8.634 0 0 1 8.04 7.02c.99.645 1.853 1.448 2.565 2.393a10.57 10.57 0 0 1-2.452 4.095 8.637 8.637 0 0 1-3.983-1.493zm6.183 6.09c-.848-.75-1.583-1.6-2.19-2.528a8.638 8.638 0 0 1 3.65-3.525c-.975.63-1.834 1.425-2.547 2.355v.023c.338.248.684.48 1.034.692zm.525.135c.345-.21.683-.435 1.013-.675l2.497-1.74a8.636 8.636 0 0 1-3.232 3.825c-.083-.48-.12-.975-.12-1.463a13.2 13.2 0 0 1-.158.053zm3.765-1.928a10.564 10.564 0 0 1 2.452-4.095 8.636 8.636 0 0 1 3.983 1.493c-.03.495-.09.983-.18 1.463a8.636 8.636 0 0 1-3.69 3.532c-.99-.645-1.853-1.448-2.565-2.393z"/></svg>                    </div>
+                     <!-- Session Card 3 -->
+                     <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 cursor-pointer">
+                        <div>
+                            <p class="font-bold">The Finals - Tournament Practice</p>
+                            <p class="text-sm text-gray-400">2/4 Players</p>
+                        </div>
+                         <!-- SVG Icon for Xbox -->
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.09 15.37l-3.3-3.3 1.41-1.41 1.89 1.89 4.24-4.24 1.41 1.41-5.65 5.65z"/></svg>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+ <!-- =========== THE PLAYER'S VERDICT SECTION =========== -->
+<section id="player-verdict" class="py-16 md:py-24 bg-gray-950">
+    <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">The Player's Voice</h3>
+            <p class="text-lg text-gray-400">Honest reviews and up-to-the-minute ratings from the Eternal Backlog community. See what your fellow players really think.</p>
+        </div>
+
+        <!-- Two-Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+            
+            <!-- Left Column: Recent Reviews (takes up 2/3 of the space on large screens) -->
+            <div class="lg:col-span-2 space-y-6">
+                <h4 class="text-2xl font-semibold border-b-2 border-purple-500 pb-2 mb-6">Recent Player Reviews</h4>
+
+                <!-- Review Card 1 -->
+                <article class="bg-gray-800/50 rounded-lg p-6 shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://placehold.co/100x130/1a202c/ffffff?text=Elden+Ring" alt="Elden Ring Box Art" class="w-20 rounded-md shadow-md">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h5 class="text-xl font-bold">Elden Ring</h5>
+                                    <p class="text-sm text-gray-400">Reviewed by <span class="font-semibold text-purple-400">RanniTheWitch</span></p>
+                                </div>
+                                <div class="bg-green-500/20 text-green-300 font-bold text-lg py-1 px-3 rounded-full">9.5/10</div>
+                            </div>
+                            <blockquote class="text-gray-300 mt-4 italic border-l-4 border-gray-600 pl-4">
+                                "The best open-world design I've ever experienced. The trophy list is challenging but fair, making the Platinum one of the most satisfying achievements in gaming."
+                            </blockquote>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Review Card 2 -->
+                <article class="bg-gray-800/50 rounded-lg p-6 shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://placehold.co/100x130/1a202c/ffffff?text=Helldivers+2" alt="Helldivers 2 Box Art" class="w-20 rounded-md shadow-md">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h5 class="text-xl font-bold">Helldivers 2</h5>
+                                    <p class="text-sm text-gray-400">Reviewed by <span class="font-semibold text-purple-400">PatriotPrime</span></p>
+                                </div>
+                                <div class="bg-green-500/20 text-green-300 font-bold text-lg py-1 px-3 rounded-full">8.8/10</div>
+                            </div>
+                            <blockquote class="text-gray-300 mt-4 italic border-l-4 border-gray-600 pl-4">
+                                "Chaotic, hilarious, and brilliant. Don't even think about the trophies until you've mastered the basics. The co-op experience is second to none."
+                            </blockquote>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Right Column: Top Rated Games List -->
+            <div class="space-y-4">
+                <h4 class="text-2xl font-semibold border-b-2 border-purple-500 pb-2 mb-6">Top Rated This Month</h4>
+                
+                <!-- Game List Item 1 -->
+                <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4 hover:bg-gray-800 transition-colors">
+                    <span class="text-2xl font-bold text-gray-500 w-8 text-center">1</span>
+                    <img src="https://placehold.co/80x80/1a202c/ffffff?text=BG3" alt="Game Thumbnail" class="w-12 h-12 rounded-md">
+                    <div class="flex-1">
+                        <p class="font-bold">Baldur's Gate 3</p>
+                    </div>
+                    <span class="font-bold text-xl text-green-400">9.7</span>
+                </div>
+                <!-- Game List Item 2 -->
+                <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4 hover:bg-gray-800 transition-colors">
+                    <span class="text-2xl font-bold text-gray-500 w-8 text-center">2</span>
+                    <img src="https://placehold.co/80x80/1a202c/ffffff?text=ER" alt="Game Thumbnail" class="w-12 h-12 rounded-md">
+                    <div class="flex-1">
+                        <p class="font-bold">Elden Ring</p>
+                    </div>
+                    <span class="font-bold text-xl text-green-400">9.5</span>
+                </div>
+                <!-- Game List Item 3 -->
+                <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4 hover:bg-gray-800 transition-colors">
+                    <span class="text-2xl font-bold text-gray-500 w-8 text-center">3</span>
+                    <img src="https://placehold.co/80x80/1a202c/ffffff?text=RDR2" alt="Game Thumbnail" class="w-12 h-12 rounded-md">
+                    <div class="flex-1">
+                        <p class="font-bold">Red Dead Redemption 2</p>
+                    </div>
+                    <span class="font-bold text-xl text-yellow-400">9.4</span>
+                </div>
+                 <!-- Game List Item 4 -->
+                <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4 hover:bg-gray-800 transition-colors">
+                    <span class="text-2xl font-bold text-gray-500 w-8 text-center">4</span>
+                    <img src="https://placehold.co/80x80/1a202c/ffffff?text=TW3" alt="Game Thumbnail" class="w-12 h-12 rounded-md">
+                    <div class="flex-1">
+                        <p class="font-bold">The Witcher 3: Wild Hunt</p>
+                    </div>
+                    <span class="font-bold text-xl text-yellow-400">9.3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Call to Action -->
+        <div class="text-center mt-16">
+             <h4 class="text-2xl font-bold mb-4">Want to add your voice?</h4>
+             <p class="text-gray-400 max-w-xl mx-auto mb-6">Create a free account to rate your games, write reviews, and track your entire backlog in one place.</p>
+             <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-lg inline-block text-lg transition-transform hover:scale-105">Join The Community</a>
+        </div>
+    </div>
+</section>
+</main>
+<script>
+    const swiper = new Swiper('.swiper', {
+// Optional parameters
+loop: true, // This makes the slider loop infinitely
+autoplay: {
+delay: 5000, // Slides change every 5 seconds
+disableOnInteraction: false,
+},
+// If we need pagination
+pagination: {
+  el: '.swiper-pagination',
+  clickable: true,
+},
+
+// If we need navigation buttons
+navigation: {
+  nextEl: '.swiper-button-next',
+  prevEl: '.swiper-button-prev',
+},});
+</script>
+<script>
+    // Mobile Menu Toggle Script
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>
